@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1> Laços de Repetição</h1>
+   <h2>Reduce:</h2>
+   <p>Subtraindo os números de uma Array, da esquerda para a direita:</p>
+
+   <p id="exemplo"></p>
+   
+   <script>
+   const numeros = [175, 50, 25];
+   document.getElementById("exemplo").innerHTML = numeros.reduce(funcao);
+   
+   function funcao(total, num) {
+     return total - num;
+    }
+    </script>
+
+    <h2>For In:</h2>
+    <p>For in irá adicionar termos entre valores de uma Array:</p>
+
+    <p id="demo"></p>
+
+    <script>
+    const numbers = [45, 4, 9, 16, 25];
+
+    let txt = "";
+    for (let x in numbers) {
+    txt += numbers[x] + "<br>"; 
+    }
+
+    document.getElementById("demo").innerHTML = txt;
+    </script>
+
+    <h2>For of</h2>
+
+    <p>For of irá adicionar texto entre valores ou caracteres de uma Array</p>
+
+    <p id="demo"></p>
+
+    <script>
+    let language = "JavaScript";
+
+    let text = "";
+    for (let x of language) {
+    text += x + "<br>";
+    }
+
+    document.getElementById("demo").innerHTML = text;
+    </script>
+
+    <h2>forEach</h2>
+
+    <p>For of irá adicionar texto entre valores ou caracteres de uma Array</p>
+
+    <div id="employee-list"></div>
+
+    <script>
+        const employees = [
+            {
+                name: 'John', age: 35,
+                team: "Data Structure & Algorithm"
+            },
+            {
+                name: 'Doe', age: 26,
+                team: "DevOps Bootcamp"
+            },
+            {
+                name: 'Ben', age: 21,
+                team: "Data Science"
+            }
+        ];
+
+        const employeeListDiv = document.getElementById('employee-list');
+
+        employees.forEach((employee) => {
+            const employeeInfo = `
+                <div class="employee-info">
+                    <strong>${employee.name}</strong> tem ${employee.age} anos,
+                    e faz parte da equipe <em>${employee.team}</em>.
+                </div>
+            `;
+            employeeListDiv.innerHTML += employeeInfo;
+        });
+    </script>
+
+</body>
+</html>
